@@ -1,11 +1,18 @@
-# PinPokies
+# PinPokies Bonus Calculator
 
-PinPokies is an online casino review platform for New Zealand players.
+A simple browser-based calculator for estimating casino bonus value.
 
-## About
+## Features
 
-PinPokies provides casino reviews, pokies information, bonuses, and helpful guides for players in New Zealand.
+- Calculates bonus amount from a deposit and bonus percentage
+- Shows total balance including the bonus
+- Estimates wagering requirement from a multiplier
+- Runs entirely in the browser with no dependencies
 
 ## Website
 
 https://pinpokies.com/
+
+## Usage
+
+Open `index.html` in a web browser and enter the deposit, bonus percentage, and wagering multiplier.

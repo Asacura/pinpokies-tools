@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PinPokies Bonus Calculator</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:720px;margin:40px auto;padding:20px}
+label{display:block;margin-top:18px;font-weight:600}
+input{width:100%;box-sizing:border-box;padding:10px;margin-top:6px}
+button{margin-top:22px;padding:11px 18px;cursor:pointer}
+.result{margin-top:24px;padding:18px;border:1px solid #ddd;border-radius:8px}
+.muted{color:#666}
+</style>
+</head>
+<body>
+<h1>PinPokies Bonus Calculator</h1>
+<p class="muted">Estimate bonus value and wagering requirements.</p>
+
+<label for="deposit">Deposit</label>
+<input id="deposit" type="number" min="0" step="0.01" value="100">
+
+<label for="bonus">Bonus percentage (%)</label>
+<input id="bonus" type="number" min="0" step="1" value="100">
+
+<label for="wager">Wagering multiplier (x)</label>
+<input id="wager" type="number" min="0" step="1" value="35">
+
+<button onclick="calculate()">Calculate</button>
+
+<div class="result" id="result">Enter your values and select Calculate.</div>
+
+<script>
+function calculate(){
+  const deposit=Number(document.getElementById('deposit').value)||0;
+  const bonusPct=Number(document.getElementById('bonus').value)||0;
+  const wager=Number(document.getElementById('wager').value)||0;
+  const bonus=deposit*bonusPct/100;
+  const total=deposit+bonus;
+  const wagering=bonus*wager;
+  document.getElementById('result').innerHTML=
+    '<p>Bonus amount: <strong>'+bonus.toFixed(2)+'</strong></p>'+
+    '<p>Total deposit + bonus: <strong>'+total.toFixed(2)+'</strong></p>'+
+    '<p>Estimated wagering requirement on the bonus: <strong>'+wagering.toFixed(2)+'</strong></p>'+
+    '<p class="muted">This is an estimate only. Actual bonus terms may differ.</p>';
+}
+</script>
+</body>
+</html>
