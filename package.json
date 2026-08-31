@@ -1,0 +1,33 @@
+{
+  "name": "pin-pokies-bonus-calculator",
+  "version": "1.0.0",
+  "description": "Framework-free JavaScript helpers for estimating bonus value and wagering requirements.",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "poker",
+    "casino",
+    "bonus",
+    "calculator",
+    "wagering",
+    "responsible-gambling"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Asacura/pinpokies-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Asacura/pinpokies-tools/issues"
+  },
+  "homepage": "https://pinpokies.com/bonus-calculator/"
+}
+
