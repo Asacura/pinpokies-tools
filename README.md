@@ -1,18 +1,55 @@
-# PinPokies Bonus Calculator
+# Pin Pokies Bonus Calculator
 
-A simple browser-based calculator for estimating casino bonus value.
+A small browser calculator and framework-free JavaScript helper for estimating bonus value and wagering requirements.
+
+Try the live [Pin Pokies Bonus Calculator](https://pinpokies.com/bonus-calculator/).
 
 ## Features
 
-- Calculates bonus amount from a deposit and bonus percentage
-- Shows total balance including the bonus
-- Estimates wagering requirement from a multiplier
-- Runs entirely in the browser with no dependencies
+- Calculates the bonus amount from a deposit and bonus percentage
+- Shows the deposit plus bonus total
+- Estimates wagering requirements from a multiplier
+- Runs in the browser and exposes the same calculation as a zero-dependency npm package
 
-## Website
+## Browser calculator
 
-https://pinpokies.com/
+Open `index.html` in a browser and enter the deposit, bonus percentage, and wagering multiplier.
 
-## Usage
+## JavaScript package
 
-Open `index.html` in a web browser and enter the deposit, bonus percentage, and wagering multiplier.
+Install the helper with:
+
+```bash
+npm install pin-pokies-bonus-calculator
+```
+
+Use it from Node.js or a bundler:
+
+```js
+const {
+  calculateBonusSummary,
+  formatCurrency,
+} = require('pin-pokies-bonus-calculator');
+
+const summary = calculateBonusSummary({
+  deposit: 100,
+  bonusPercentage: 100,
+  wageringMultiplier: 35,
+});
+
+console.log(formatCurrency(summary.bonusAmount));
+console.log(summary.wageringRequirement);
+```
+
+The package contains calculation helpers only; it does not process deposits, accounts, or payments. All values are estimates. Always check the actual bonus terms and applicable rules before relying on them.
+
+## Development
+
+```bash
+npm test
+```
+
+## License
+
+MIT
+
